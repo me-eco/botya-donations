@@ -1,14 +1,14 @@
-const urlSearchParams = window.URLSearchParams;
-let sum = -1
-let comment = ""
+const urlQuery = window.location.href.split("?")[1];
+const urlSearchParams = new URLSearchParams("?" + urlQuery);
 const payButton = document.getElementById("pay-button");
 const nameInput = document.getElementById("name");
 const sumInput = document.getElementById("sum-rub");
+const qiwiId = urlSearchParams.get("qiwi_id");
 
 let name = "";
-let sum = -1;
+let sum = NaN;
 
-if(!urlSearchParams["qiwi_id"] == null)
+if(qiwiId === null || qiwiId.length !== 11)
 {
     let nowQiwiScreen = document.querySelector(".no-qiwi-id-error");
     let mainWrapper = document.querySelector(".main-wrapper");
@@ -19,28 +19,36 @@ if(!urlSearchParams["qiwi_id"] == null)
 }
 
 function constructQiwiUrl() {
-    let commentEncoded = `extra['comment']=${encodeURI(comment)}`;
-    let accountEncoded = `extra['account']=${urlSearchParams["qiwi_id"]}`;
-
-    return `https://qiwi.com/99?ammountInteger=${sum}&${commentEncoded}&${accountEncoded}`;
+    const query = new URLSearchParams("?");
+    query.append("extra['comment']", name);
+    query.append("extra['account']", qiwiId);
+    query.append("amountInteger", sum);
+    query.append("amountFraction", "0");
+    query.append("currency", "643");
+    query.append("blocked[0]", "sum");
+    query.append("blocked[1]", "account");
+    query.append("blocked[2]", "comment");
+    return `https://qiwi.com/payment/form/99?${query.toString()}`;
 }
 
 function updateInputsData() {
     name = nameInput.value;
-    sum = Number.parseInt(sum);
+    sum = Number.parseInt(sumInput.value);
 
-    if(name !== "" && sum > 1) {
+    if(name !== "" && sum !== NaN) {
         payButton.removeAttribute("disabled");
     } else {
         payButton.setAttribute("disabled", "true");
     }
+    console.log(name);
+    console.log(sum)
 }
-
-console.log(payButton)
 
 nameInput.onkeyup = updateInputsData;
 sumInput.onkeyup = updateInputsData;
 
 payButton.addEventListener("click", function () {
+    const generatedUrl = constructQiwiUrl();
 
+    window.location = generatedUrl;
 });

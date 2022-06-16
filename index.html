@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пожертвовать</title>
+    <link rel="stylesheet" href="style.css"/>
+    <meta name="theme-color" content="#57b8ff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon.ico"/>
+</head>
+<body>
+<div class="no-qiwi-id-error screen">
+    <h1>
+        Кажется, Ботя завел Вас в какую-то неизведанную даль.
+        Сообщите нам об этом <a href="mailto:support@denvot.dev">support@denvot.dev</a>
+    </h1>
+    <p>
+        А может быть администратор сервера, откуда Вы пришли, что-то в настройках сломал. Не всегда виноват Ботя
+    </p>
+</div>
+<div class="main-wrapper">
+    <div class="centered-wrapper">
+        <h1>Пожертвование на сервер</h1>
+    </div>
+    <div class="boxes-wrapper">
+        <div class="box rounded">
+            <div id="payment-form">
+                <p>Спасибо, что пришли сюда!
+                    Перед тем как Вы пойдете дальше, мы хотим Вам задать пару вопросов</p>
+                <p>Скажите нам Ваше прекрасное имя или хотите остаться анонимным?</p>
+                <div class="inputs-combo">
+                    <input id="name" placeholder="Имя" type="text"/>
+                    <input id="sum-rub" type="number" placeholder="Сумма в рублях">
+                </div>
+            </div>
+            <div class="pay-section">
+                <button class="pay-button rounded" disabled id="pay-button">
+                    Оплата
+                    <img src="images/qiwi-logo.png" alt="QIWI" width="54"/>
+                </button>
+                <img src="images/mascot.svg" alt="Ботя, но он почему-то не хочет грузиться( Возможно, он стесняется"/>
+            </div>
+        </div>
+        <div class="box rounded" id="ad">
+            <h1>Хотите также?</h1>
+            <p>
+                Ботя - это постоянно развивающийся Discord бот.
+                В 2021 году он закрылся, но сейчас бот переживает эпоху возрождения.
+                Поверьте, ничего не изменилось!
+                Разработчик так и продолжает слушать свою аудиторию и радовать их новшествами, Ботя так и остался ботом с бесплатными функциями.
+                Что Вы можете сделать, чтобы Ботя стал лучше?
+                Первое - это добавьте его к себе на сервер.
+                Второе - это предлагайте идеи разработчику на сервере поддержки.
+                Только все вместе мы сможем сделать лучшего бота в Discord.
+                Присоединяетесь!
+            </p>
+        </div>
+    </div>
+    <div class="centered-wrapper">
+        <img src="images/me-logo.svg" alt="me"/>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

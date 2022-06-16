@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+:root {
+    --theme-color: #57B8FF;
+    --light-theme-color: #88CDFF;
+    --very-light-theme-color: #bed8fa;
+    --muted-color: #B3B3B3;
+    --qiwi-brand: #FF8C00;
+}
+
+* {
+    font-family: 'Russo One', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: var(--very-light-theme-color)
+}
+
+html {
+    background: var(--theme-color);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
+.box {
+    color: #FFF;
+    background: var(--light-theme-color);
+    padding: 1.5em;
+    width: 500px;
+    height: max-content;
+}
+
+.pay-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: #FFF;
+    width: 270px;
+    height: 70px;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--muted-color);
+    transition: color 0.3s;
+}
+
+.pay-button:disabled {
+    opacity: 0.75;
+    cursor: auto;
+}
+
+.pay-button:disabled:hover {
+    color: var(--muted-color);
+}
+
+.pay-button:hover {
+    color: var(--qiwi-brand);
+}
+
+.pay-section {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.boxes-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.centered-wrapper {
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.inputs-combo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputs-combo input::placeholder {
+    color: var(--muted-color);
+}
+
+.inputs-combo input {
+    text-align: center;
+    font-size: 24px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#payment-form {
+    font-size: 24px;
+}
+
+#ad {
+    position: relative;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+    #ad:after {
+        position: absolute;
+        content: "";
+        background: url("images/me-ds-logo.svg");
+        background-size: contain;
+        width: 100px;
+        height: 100px;
+        top: -25px;
+        right: -25px;
+    }
+}
+
+.no-qiwi-id-error {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--theme-color);
+    z-index: -10000000;
+    opacity: 0;
+    flex-direction: column;
+    text-align: center;
+}
+

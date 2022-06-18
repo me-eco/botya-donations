@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Пожертвовать</title>
-    <link rel="stylesheet" href="style.css"/>
-    <meta name="theme-color" content="#57b8ff">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#5798ff"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="icon" href="images/favicon.ico"/>
 </head>
 <body>
@@ -19,17 +19,19 @@
     </p>
 </div>
 <div class="main-wrapper">
-    <div class="centered-wrapper">
+    <div class="centered-wrapper heap">
         <h1>Пожертвование на сервер</h1>
+        <span id="toggle-theme-label">Сменить тему</span>
     </div>
     <div class="boxes-wrapper">
         <div class="box rounded">
             <div id="payment-form">
                 <p>Спасибо, что пришли сюда!
                     Перед тем как Вы пойдете дальше, мы хотим Вам задать пару вопросов</p>
-                <p>Скажите нам Ваше прекрасное имя или хотите остаться анонимным?</p>
                 <div class="inputs-combo">
+                    <label for="name">Как Вас зовут?</label>
                     <input id="name" placeholder="Имя" type="text"/>
+                    <label for="sum-rub">Сколько Вы хотите пожертвовать?</label>
                     <input id="sum-rub" type="number" placeholder="Сумма в рублях">
                 </div>
             </div>

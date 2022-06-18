@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 :root {
-    --theme-color: #57B8FF;
-    --light-theme-color: #88CDFF;
+    --brand-color: #57B8FF;
+    --theme-color: var(--light-theme-color);
+    --theme-color-lighter: #88CDFF;
+    --extra-txt-color: var(--light-extra-txt-color);
     --very-light-theme-color: #bed8fa;
     --muted-color: #B3B3B3;
+    --txt-color: #fafafa;
     --qiwi-brand: #FF8C00;
+
+    --light-theme-color: #ffffff;
+    --light-extra-txt-color: #88CDFF;
+
+    --brand-theme-color: var(--brand-color);
+    --brand-extra-txt-color: #f6f6f6;
 }
 
 * {
@@ -37,8 +46,8 @@ body {
 }
 
 .box {
-    color: #FFF;
-    background: var(--light-theme-color);
+    color: var(--txt-color);
+    background: var(--theme-color-lighter);
     padding: 1.5em;
     width: 500px;
     height: max-content;
@@ -87,12 +96,13 @@ body {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: space-around;
+    padding: 0 20px 0 25px;
 }
 
 .centered-wrapper {
     display: flex;
     justify-content: center;
-    color: #FFFFFF;
+    color: var(--extra-txt-color);
     padding: 10px;
 }
 
@@ -108,7 +118,7 @@ body {
 
 .inputs-combo input {
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     outline: none;
     border: none;
     padding: 5px;
@@ -121,12 +131,13 @@ body {
 
 #ad {
     position: relative;
+    margin: 30px;
 }
 
 .main-wrapper {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 90%;
     justify-content: space-between;
 }
 
@@ -160,3 +171,20 @@ body {
     text-align: center;
 }
 
+.heap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#toggle-theme-label {
+    text-decoration: underline;
+    cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

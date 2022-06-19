@@ -30,7 +30,7 @@ function constructQiwiUrl() {
     query.append("currency", "643");
     query.append("blocked[0]", "sum");
     query.append("blocked[1]", "account");
-    query.append("blocked [2]", "comment");
+    query.append("blocked[2]", "comment");
     return `https://qiwi.com/payment/form/99?${query.toString()}`;
 }
 

@@ -61,7 +61,5 @@ nameInput.onkeyup = updateInputsData;
 sumInput.onkeyup = updateInputsData;
 
 payButton.addEventListener("click", function () {
-    const generatedUrl = constructQiwiUrl();
-
-    window.location = generatedUrl;
+    window.location = constructQiwiUrl();
 });

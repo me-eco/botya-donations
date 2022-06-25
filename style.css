@@ -53,6 +53,12 @@ body {
     height: max-content;
 }
 
+@media screen and (max-width: 400px) {
+    .box {
+        width: 90%;
+    }
+}
+
 .pay-button {
     display: flex;
     align-items: center;
@@ -187,4 +193,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#bot-image {
+    width: 100px;
 }

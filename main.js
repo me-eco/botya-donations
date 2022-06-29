@@ -11,7 +11,7 @@ let sum = NaN;
 
 let isLightTheme = true;
 
-if(qiwiId === null || qiwiId.length !== 11)
+if(qiwiId === null)
 {
     let nowQiwiScreen = document.querySelector(".no-qiwi-id-error");
     let mainWrapper = document.querySelector(".main-wrapper");
